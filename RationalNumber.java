@@ -86,7 +86,9 @@ public class RationalNumber extends RealNumber
   *reduced after construction.
   */
   private void reduce(){
-
+    int factor = gcd(numerator, denominator);
+    numerator = numerator / factor;
+    denominator = denominator / factor;
   }
   /******************Operations Return a new RationalNumber!!!!****************/
   /**
