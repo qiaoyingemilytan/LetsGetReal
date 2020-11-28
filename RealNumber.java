@@ -2,6 +2,7 @@ public class RealNumber{
   private double value;
 
   public RealNumber(double v){
+    super();
     value = v;
   }
 
@@ -14,21 +15,7 @@ public class RealNumber{
   }
   //---------ONLY EDIT BELOW THIS LINE------------
 
-  /*
-  *Return true when the values are within 0.001% of eachother.
-  *Special case: if one is exactly zero, the other must be exactly zero.
-  */
-  public boolean equals(RealNumber other){
-    if(getValue() == 0){
-      return other.getValue() == 0;
-    }
-    else if(Math.abs(getValue() - other.getValue())/((getValue() + other.getValue())/2) * 100 <= 0.001){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
+
 
   /*
   *Return a new RealNumber that has the value of:
