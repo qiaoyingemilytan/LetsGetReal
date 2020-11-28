@@ -49,7 +49,15 @@ public class RationalNumber extends Number{
       numerator = numerator * -1;
       denominator = denominator * -1;
     }
-    return "" + numerator + "/" + denominator;
+    if(numerator == 0){
+      return "0";
+    }
+    else if(denominator == 1){
+      return "" + numerator;
+    }
+    else{
+      return "" + numerator + "/" + denominator;
+    }
   }
 
   private static int gcd(int a, int b){
@@ -62,9 +70,9 @@ public class RationalNumber extends Number{
   }
 
   private void reduce(){
-    int factor = gcd(getNumerator(), getDenominator());
-    numerator = getNumerator() / factor;
-    denominator = getDenominator() / factor;
+    int factor = gcd(numerator, denominator);
+    numerator = numerator / factor;
+    denominator = denominator / factor;
   }
 
   public RationalNumber multiply(RationalNumber other){
